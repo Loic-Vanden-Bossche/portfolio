@@ -1,0 +1,9 @@
+.idea/
+.env
+.env.local
+
+# Terraform state and local configuration
+infrastructure/.terraform/
+infrastructure/*.tfstate
+infrastructure/*.tfstate.*
+infrastructure/*.tfvars
