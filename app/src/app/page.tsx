@@ -43,7 +43,11 @@ export default async function Home() {
         </a>
       </section>
 
-      <section className="work-placeholder" id="work" aria-labelledby="work-title">
+      <section
+        className="work-placeholder"
+        id="work"
+        aria-labelledby="work-title"
+      >
         <div>
           <p className="eyebrow">Selected work</p>
           <h2 id="work-title">Projects are on the way.</h2>
