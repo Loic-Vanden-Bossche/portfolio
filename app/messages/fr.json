@@ -1,0 +1,168 @@
+{
+  "Metadata": {
+    "title": "Loic — Portfolio photographie & développement",
+    "description": "Une archive personnelle de photographies, de développement et d'expérimentations créatives par Loic."
+  },
+  "Portfolio": {
+    "navigation": {
+      "homeLabel": "Accueil du portfolio",
+      "primaryLabel": "Navigation principale",
+      "disciplineLabel": "Choisir un portfolio",
+      "work": "Travaux",
+      "about": "À propos",
+      "languageLabel": "Changer de langue",
+      "english": "Anglais",
+      "french": "Français",
+      "returnToTop": "Revenir en haut"
+    },
+    "cursor": {
+      "link": "Aller",
+      "switch": "Changer",
+      "view": "Voir"
+    },
+    "modes": {
+      "photography": {
+        "shortLabel": "Photographie",
+        "transition": "Vers la lumière.",
+        "kicker": "Photographie / Archive personnelle",
+        "titleLineOne": "La lumière, les gens,",
+        "titleLineTwo": "et ce qui reste.",
+        "introduction": "Des photographies prises en restant attentif aux gestes discrets, aux paysages changeants et à la beauté cachée dans les jours ordinaires.",
+        "explore": "Entrer dans l'archive",
+        "essay": {
+          "label": "Un passage photographique",
+          "title": "De la première lumière à la nuit électrique.",
+          "introduction": "Dix images réunies en un seul voyage : des grands espaces vers la ville, puis sous sa surface, jusqu'à un ailleurs plus étrange.",
+          "direction": "Faites défiler lentement / l'atmosphère suivra",
+          "navigationLabel": "Chapitres de l'essai photographique",
+          "goTo": "Aller à {title}",
+          "chapters": {
+            "road": {
+              "eyebrow": "Départ / Plein jour",
+              "title": "La Route s'Ouvre",
+              "copy": "Une ligne pâle traverse la vallée. Chaque histoire commence quelque part, et chaque départ ressemble d'abord à une promesse.",
+              "alt": "Une route claire serpentant entre les champs verts et les montagnes sous un ciel bleu"
+            },
+            "butterfly": {
+              "eyebrow": "Interlude / Proximité",
+              "title": "Petite Gravité",
+              "copy": "Le monde se resserre autour d'une tige, d'une aile, de quelques grammes de vie immobiles au soleil.",
+              "alt": "Un papillon blanc posé sur des fleurs d'un magenta intense"
+            },
+            "heron": {
+              "eyebrow": "Rencontre / Attention",
+              "title": "Le Témoin Patient",
+              "copy": "Rien ne bouge sauf l'œil. La présence devient un paysage lorsque l'on reste assez longtemps pour la voir.",
+              "alt": "Profil rapproché d'un héron à l'œil et au bec jaunes"
+            },
+            "ridge": {
+              "eyebrow": "Altitude / Dernière lumière",
+              "title": "Dernier Feu sur la Crête",
+              "copy": "Le jour s'éloigne doucement, embrasant la pierre avant que le bleu froid ne gagne la neige.",
+              "alt": "Des sommets enneigés illuminés d'orange par les derniers rayons du soleil"
+            },
+            "clocks": {
+              "eyebrow": "Seuil / Heure bleue",
+              "title": "L'Heure Bleue Garde le Temps",
+              "copy": "La nature cède la place aux rues mesurées. Trois horloges retiennent le soir tandis que les fenêtres s'allument.",
+              "alt": "Des tours historiques et leurs horloges entre des façades sous un ciel bleu profond"
+            },
+            "metro": {
+              "eyebrow": "Mouvement / Ville dorée",
+              "title": "La Ville s'Élève",
+              "copy": "L'acier monte à travers la pierre ancienne, emportant une ligne verte dans la dernière chaleur du jour.",
+              "alt": "Un métro traversant un pont parisien surélevé dans une lumière dorée"
+            },
+            "spiral": {
+              "eyebrow": "Descente / Géométrie",
+              "title": "Jusqu'au Centre",
+              "copy": "La ville se replie sur elle-même. Les marches deviennent orbite, l'architecture devient mouvement, le sol une étoile lointaine.",
+              "alt": "Un escalier en spirale vu d'en haut autour d'un sol géométrique"
+            },
+            "organ": {
+              "eyebrow": "Intérieur / Résonance",
+              "title": "Cathédrale de Souffle",
+              "copy": "Des colonnes de métal attendent dans la pénombre, immense instrument suspendu entre silence et tonnerre.",
+              "alt": "Un orgue richement décoré et éclairé dans l'intérieur voûté d'une cathédrale"
+            },
+            "underground": {
+              "eyebrow": "Transit / Nuit artificielle",
+              "title": "Ligne de Nuit",
+              "copy": "Murs orange, lumière violette, un train qui retient son souffle. La ville continue sous la ville.",
+              "alt": "Une station souterraine courbe avec un train orange et des lumières violettes"
+            },
+            "jellyfish": {
+              "eyebrow": "Rémanence / L'inconnu",
+              "title": "Après-vie Électrique",
+              "copy": "Au bout de la ligne, la forme se dissout dans le courant. Le voyage s'achève dans un monde vivant, mais plus tout à fait terrestre.",
+              "alt": "Une méduse bleue et ambrée lumineuse flottant dans l'obscurité"
+            }
+          }
+        },
+        "skills": {
+          "documentary": "Documentaire",
+          "portrait": "Portrait",
+          "editorial": "Éditorial",
+          "light": "Lumière naturelle"
+        }
+      },
+      "development": {
+        "shortLabel": "Développement",
+        "transition": "Vers le système.",
+        "kicker": "Développement / Réalisations choisies",
+        "titleLineOne": "Des idées, des systèmes,",
+        "titleLineTwo": "des pixels vivants.",
+        "introduction": "Une trace d'interfaces, d'expériences et d'idées techniques explorées par le code, le mouvement et l'interaction.",
+        "explore": "Explorer les réalisations",
+        "work": {
+          "label": "Travail de développement",
+          "title": "Construit par curiosité.",
+          "introduction": "Une sélection de travaux numériques entre interfaces produit, systèmes immersifs et expériences pour comprendre ce que le web peut devenir.",
+          "projects": {
+            "interfaces": {
+              "type": "Interfaces / Produit",
+              "title": "Interactions limpides",
+              "copy": "Des interfaces qui équilibrent structure, vitesse et mouvement sans oublier la personne qui les utilise."
+            },
+            "systems": {
+              "type": "Technologie créative",
+              "title": "Systèmes immersifs",
+              "copy": "Des expériences web où graphismes en temps réel, code et interaction partagent un même espace."
+            },
+            "experiments": {
+              "type": "Recherche / Expériences",
+              "title": "Détours utiles",
+              "copy": "Des prototypes et études techniques pour apprendre, questionner les habitudes et en trouver de meilleures."
+            }
+          }
+        },
+        "skills": {
+          "next": "Next.js",
+          "typescript": "TypeScript",
+          "three": "Three.js",
+          "motion": "GSAP / Motion"
+        }
+      }
+    },
+    "profile": {
+      "imageAlt": "Loic regardant dans un appareil photo en extérieur",
+      "workImageAlt": "Loic photographiant un paysage avec un appareil argentique",
+      "caption": "Derrière l'objectif / France"
+    },
+    "about": {
+      "label": "À propos de cette archive",
+      "title": "Une personne. Deux façons de regarder.",
+      "copy": "Je passe de la photographie au développement parce que les deux commencent par le même élan : observer attentivement, comprendre la structure, puis en faire quelque chose de sincère.",
+      "skillsLabel": "Pratique actuelle"
+    },
+    "archive": {
+      "label": "Un portfolio vivant",
+      "copy": "Pas une vitrine commerciale. Seulement le travail, le processus et les choses dont je veux me souvenir."
+    },
+    "footer": {
+      "copyright": "Portfolio de Loic / {year}",
+      "location": "Basé en France",
+      "backToTop": "Retour en haut"
+    }
+  }
+}

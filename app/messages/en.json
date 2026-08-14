@@ -1,0 +1,168 @@
+{
+  "Metadata": {
+    "title": "Loic — Photography & Development Portfolio",
+    "description": "A personal archive of photography, development and creative experiments by Loic."
+  },
+  "Portfolio": {
+    "navigation": {
+      "homeLabel": "Portfolio home",
+      "primaryLabel": "Primary navigation",
+      "disciplineLabel": "Choose a portfolio",
+      "work": "Work",
+      "about": "About",
+      "languageLabel": "Change language",
+      "english": "English",
+      "french": "French",
+      "returnToTop": "Return to top"
+    },
+    "cursor": {
+      "link": "Go",
+      "switch": "Switch",
+      "view": "View"
+    },
+    "modes": {
+      "photography": {
+        "shortLabel": "Photography",
+        "transition": "Into the light.",
+        "kicker": "Photography / Personal archive",
+        "titleLineOne": "Light, people,",
+        "titleLineTwo": "and what remains.",
+        "introduction": "Photographs made while paying attention — to quiet gestures, changing landscapes and the beauty hidden in ordinary days.",
+        "explore": "Enter the archive",
+        "essay": {
+          "label": "A photographic passage",
+          "title": "From first light to the electric dark.",
+          "introduction": "Ten images arranged as one journey: beginning in open country, following life into the city, then descending beneath its surface toward something stranger.",
+          "direction": "Scroll slowly / the atmosphere will follow",
+          "navigationLabel": "Photo essay chapters",
+          "goTo": "Go to {title}",
+          "chapters": {
+            "road": {
+              "eyebrow": "Departure / Daylight",
+              "title": "The Road Opens",
+              "copy": "A pale line through the valley. Every story needs somewhere to begin, and every departure first looks like possibility.",
+              "alt": "A bright mountain road curving through green fields beneath a clear blue sky"
+            },
+            "butterfly": {
+              "eyebrow": "Interlude / Nearness",
+              "title": "Small Gravity",
+              "copy": "The world contracts to a stem, a wing, a few grams of life holding perfectly still in the sun.",
+              "alt": "A white butterfly resting on vivid magenta flowers"
+            },
+            "heron": {
+              "eyebrow": "Encounter / Attention",
+              "title": "The Patient Witness",
+              "copy": "Nothing moves except the eye. Presence becomes its own kind of landscape when we stay long enough to notice.",
+              "alt": "Close profile of a heron with a bright yellow eye and beak"
+            },
+            "ridge": {
+              "eyebrow": "Elevation / Last light",
+              "title": "Last Fire on the Ridge",
+              "copy": "The day leaves slowly, setting the stone alight before cold blue settles into the snow below.",
+              "alt": "Snow-covered mountain peaks glowing orange in the final sunlight"
+            },
+            "clocks": {
+              "eyebrow": "Threshold / Blue hour",
+              "title": "Blue Hour Keeps Time",
+              "copy": "Nature gives way to measured streets. Three clocks hold the evening while windows begin to glow.",
+              "alt": "Historic clock towers framed between buildings beneath a deep blue evening sky"
+            },
+            "metro": {
+              "eyebrow": "Movement / Golden city",
+              "title": "The City Climbs",
+              "copy": "Steel rises through old stone, carrying a green line into the last warm edge of the day.",
+              "alt": "A metro train crossing an elevated Parisian bridge in golden light"
+            },
+            "spiral": {
+              "eyebrow": "Descent / Geometry",
+              "title": "Down to the Center",
+              "copy": "The city folds inward. Steps become orbit, architecture becomes motion, and the floor becomes a distant star.",
+              "alt": "A spiral staircase seen from above, circling toward a patterned center"
+            },
+            "organ": {
+              "eyebrow": "Interior / Resonance",
+              "title": "Cathedral of Breath",
+              "copy": "Columns of metal wait in the half-light, an immense instrument poised between silence and thunder.",
+              "alt": "An ornate cathedral pipe organ illuminated inside a vaulted stone interior"
+            },
+            "underground": {
+              "eyebrow": "Transit / Artificial night",
+              "title": "Night Line",
+              "copy": "Orange walls, violet light, a train holding its breath. The city continues beneath the city.",
+              "alt": "A curved underground station with an orange train and glowing platform lights"
+            },
+            "jellyfish": {
+              "eyebrow": "Afterimage / The unknown",
+              "title": "Electric Afterlife",
+              "copy": "At the end of the line, form dissolves into current. The journey finishes somewhere that feels alive, but no longer earthly.",
+              "alt": "A luminous blue and amber jellyfish floating in deep darkness"
+            }
+          }
+        },
+        "skills": {
+          "documentary": "Documentary",
+          "portrait": "Portrait",
+          "editorial": "Editorial",
+          "light": "Natural light"
+        }
+      },
+      "development": {
+        "shortLabel": "Development",
+        "transition": "Into the system.",
+        "kicker": "Development / Selected builds",
+        "titleLineOne": "Ideas, systems,",
+        "titleLineTwo": "and living pixels.",
+        "introduction": "A record of interfaces, experiments and technical ideas explored through code, motion and thoughtful interaction.",
+        "explore": "Explore the builds",
+        "work": {
+          "label": "Development work",
+          "title": "Built with curiosity.",
+          "introduction": "Selected digital work spanning product interfaces, immersive systems and experiments made to understand what the web can become.",
+          "projects": {
+            "interfaces": {
+              "type": "Interfaces / Product",
+              "title": "Clear interactions",
+              "copy": "Interfaces that balance structure, speed and motion without losing sight of the person using them."
+            },
+            "systems": {
+              "type": "Creative technology",
+              "title": "Immersive systems",
+              "copy": "Browser experiences where real-time graphics, code and interaction share the same space."
+            },
+            "experiments": {
+              "type": "Research / Experiments",
+              "title": "Useful detours",
+              "copy": "Prototypes and technical studies created to learn, question familiar patterns and find better ones."
+            }
+          }
+        },
+        "skills": {
+          "next": "Next.js",
+          "typescript": "TypeScript",
+          "three": "Three.js",
+          "motion": "GSAP / Motion"
+        }
+      }
+    },
+    "profile": {
+      "imageAlt": "Loic looking through a camera outdoors",
+      "workImageAlt": "Loic photographing a landscape with an analog camera",
+      "caption": "Behind the lens / France"
+    },
+    "about": {
+      "label": "About this archive",
+      "title": "One person. Two ways of looking.",
+      "copy": "I move between photography and development because both begin with the same impulse: observe closely, understand the structure, then make something honest from it.",
+      "skillsLabel": "Current practice"
+    },
+    "archive": {
+      "label": "A living portfolio",
+      "copy": "Not a storefront. Just the work, the process, and the things I want to remember."
+    },
+    "footer": {
+      "copyright": "Loic Portfolio / {year}",
+      "location": "Based in France",
+      "backToTop": "Back to top"
+    }
+  }
+}

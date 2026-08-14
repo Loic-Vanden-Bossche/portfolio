@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prod": "yarn build && yarn start",
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "optimize:photos": "node scripts/optimize-photo-assets.mjs",
     "prepare": "cd .. && app/node_modules/.bin/husky app/.husky",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
@@ -19,10 +21,15 @@
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
+    "@react-three/fiber": "^9.7.0",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.26",
     "next": "16.3.0",
+    "next-intl": "^4.13.6",
     "pg": "^8.22.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "three": "^0.185.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.1",
@@ -32,6 +39,7 @@
     "@types/pg": "^8.21.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.185.4",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "eslint-config-prettier": "^10.1.8",

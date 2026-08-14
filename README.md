@@ -64,3 +64,7 @@ Run these from `app/`:
 The initial migration creates a `PortfolioProfile` record. The home page reads its introduction on the server, which provides a small end-to-end example of Next.js communicating with PostgreSQL through Prisma.
 
 Never commit real credentials or `.env` files. The credentials in `compose.yaml` and `.env.example` are development-only defaults.
+
+## Frontend implementation guide
+
+The established visual system, component boundaries, animation techniques, WebGL architecture, Git hooks, and browser-review workflow are documented in [`app/docs/FRONTEND_GUIDE.md`](app/docs/FRONTEND_GUIDE.md). Follow that guide when extending the current design.
