@@ -5,6 +5,8 @@ import { useEffect, useRef } from "react";
 
 import { useSmoothScroll } from "@/components/motion/smooth-scroll-provider";
 
+import * as styles from "./return-to-top.css";
+
 export function ReturnToTop() {
   const button = useRef<HTMLButtonElement>(null);
   const progress = useRef<SVGCircleElement>(null);
@@ -80,7 +82,7 @@ export function ReturnToTop() {
   return (
     <button
       aria-label={t("returnToTop")}
-      className="return-to-top"
+      className={styles.root}
       data-cursor="link"
       data-visible="false"
       onClick={returnToTop}
@@ -88,10 +90,10 @@ export function ReturnToTop() {
       title={t("returnToTop")}
       type="button"
     >
-      <svg aria-hidden="true" viewBox="0 0 44 44">
-        <circle className="return-to-top-track" cx="22" cy="22" r="19" />
+      <svg aria-hidden="true" className={styles.icon} viewBox="0 0 44 44">
+        <circle className={styles.track} cx="22" cy="22" r="19" />
         <circle
-          className="return-to-top-progress"
+          className={styles.progress}
           cx="22"
           cy="22"
           pathLength="1"
@@ -99,7 +101,7 @@ export function ReturnToTop() {
           ref={progress}
         />
         <path
-          className="return-to-top-arrow"
+          className={styles.arrow}
           d="M 16 24 L 22 18 L 28 24 M 22 18 L 22 29"
         />
       </svg>

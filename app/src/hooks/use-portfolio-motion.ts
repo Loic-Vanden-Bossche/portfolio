@@ -16,7 +16,7 @@ export function usePortfolioMotion(
       const media = gsap.matchMedia();
 
       media.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.from(".hero-reveal", {
+        gsap.from('[data-animate="hero-reveal"]', {
           duration: 1.1,
           opacity: 0,
           stagger: 0.1,
@@ -25,7 +25,7 @@ export function usePortfolioMotion(
         });
 
         if (mode === "development") {
-          gsap.to(".scene", {
+          gsap.to('[data-animate="scene"]', {
             yPercent: 14,
             ease: "none",
             scrollTrigger: {
@@ -49,19 +49,21 @@ export function usePortfolioMotion(
       const media = gsap.matchMedia();
 
       media.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.utils.toArray<HTMLElement>(".reveal").forEach((element) => {
-          gsap.from(element, {
-            opacity: 0,
-            y: 46,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: element,
-              start: "top 88%",
-              once: true,
-            },
+        gsap.utils
+          .toArray<HTMLElement>('[data-animate="reveal"]')
+          .forEach((element) => {
+            gsap.from(element, {
+              opacity: 0,
+              y: 46,
+              duration: 0.9,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: element,
+                start: "top 88%",
+                once: true,
+              },
+            });
           });
-        });
       });
     }, stage);
 

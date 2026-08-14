@@ -1,4 +1,15 @@
-import { type CSSProperties } from "react";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
+
+import * as styles from "./photo-atmosphere.css";
+import {
+  particleDelay,
+  particleDriftX,
+  particleDriftY,
+  particleDuration,
+  particleLeft,
+  particleSize,
+  particleTop,
+} from "./photo-style-vars.css";
 
 const particles = Array.from({ length: 18 }, (_, index) => ({
   delay: `${(index % 6) * -1.7}s`,
@@ -12,43 +23,50 @@ const particles = Array.from({ length: 18 }, (_, index) => ({
 
 export function PhotoAtmosphere() {
   return (
-    <div className="photo-atmosphere" aria-hidden="true">
-      <div className="photo-atmosphere-viewport">
-        <span className="photo-atmosphere-glow photo-atmosphere-glow-primary" />
-        <span className="photo-atmosphere-glow photo-atmosphere-glow-secondary" />
+    <div className={styles.root} aria-hidden="true">
+      <div className={styles.viewport} data-photo-part="atmosphere">
+        <span
+          className={`${styles.glow} ${styles.primaryGlow}`}
+          data-photo-part="atmosphere-glow"
+        />
+        <span
+          className={`${styles.glow} ${styles.secondaryGlow}`}
+          data-photo-part="atmosphere-glow"
+        />
 
-        <div className="photo-atmosphere-particles">
+        <div className={styles.particles}>
           {particles.map((particle, index) => (
             <span
-              className="photo-atmosphere-particle"
+              className={styles.particle}
+              data-photo-part="atmosphere-particle"
               key={index}
-              style={
-                {
-                  "--particle-delay": particle.delay,
-                  "--particle-drift-x": particle.driftX,
-                  "--particle-drift-y": particle.driftY,
-                  "--particle-duration": particle.duration,
-                  "--particle-left": particle.left,
-                  "--particle-size": particle.size,
-                  "--particle-top": particle.top,
-                } as CSSProperties
-              }
+              style={assignInlineVars({
+                [particleDelay]: particle.delay,
+                [particleDriftX]: particle.driftX,
+                [particleDriftY]: particle.driftY,
+                [particleDuration]: particle.duration,
+                [particleLeft]: particle.left,
+                [particleSize]: particle.size,
+                [particleTop]: particle.top,
+              })}
             />
           ))}
         </div>
 
         <svg
-          className="photo-atmosphere-wire"
+          className={styles.wire}
+          data-photo-part="atmosphere-wire"
           preserveAspectRatio="none"
           viewBox="0 0 1000 1000"
         >
           <path
-            className="photo-atmosphere-wire-base"
+            className={styles.wireBase}
             d="M -80 760 C 150 570 250 920 470 650 S 720 270 1080 410"
             pathLength="1"
           />
           <path
-            className="photo-atmosphere-wire-energy"
+            className={styles.wireEnergy}
+            data-photo-part="atmosphere-wire-energy"
             d="M -80 760 C 150 570 250 920 470 650 S 720 270 1080 410"
             pathLength="1"
           />

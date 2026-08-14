@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import type { PortfolioMode, PortfolioProject } from "./portfolio-data";
+import * as styles from "./project-card.css";
 
 type ProjectCardProps = {
   isFeatured: boolean;
@@ -14,27 +15,32 @@ export function ProjectCard({ isFeatured, mode, project }: ProjectCardProps) {
   const translationPath = `modes.${mode}.work.projects.${project.key}`;
 
   return (
-    <article className={`project-card project-${project.tone} reveal`}>
+    <article
+      className={`${styles.root} ${project.index === "03" ? styles.wide : ""}`}
+      data-animate="reveal"
+      data-portfolio-mode={mode}
+      data-tone={project.tone}
+    >
       {mode === "photography" && isFeatured ? (
         <Image
           alt={t("profile.workImageAlt")}
-          className="project-image"
+          className={styles.image}
           fill
           sizes="(max-width: 800px) 100vw, 55vw"
           src="/img/profile.png"
         />
       ) : (
-        <div className="card-art" aria-hidden="true">
-          <span />
+        <div className={styles.art} aria-hidden="true">
+          <span className={styles.artPoint} />
         </div>
       )}
-      <div className="card-meta">
+      <div className={styles.meta}>
         <span>{project.index}</span>
         <span>{t(`${translationPath}.type`)}</span>
       </div>
-      <div className="card-content">
-        <h3>{t(`${translationPath}.title`)}</h3>
-        <p>{t(`${translationPath}.copy`)}</p>
+      <div className={styles.content}>
+        <h3 className={styles.title}>{t(`${translationPath}.title`)}</h3>
+        <p className={styles.description}>{t(`${translationPath}.copy`)}</p>
       </div>
     </article>
   );

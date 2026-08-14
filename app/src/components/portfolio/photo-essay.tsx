@@ -1,14 +1,22 @@
+import { assignInlineVars } from "@vanilla-extract/dynamic";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { type CSSProperties, useRef } from "react";
+import { useRef } from "react";
 
 import { usePhotoEssayMotion } from "@/hooks/use-photo-essay-motion";
 
 import { PhotoAtmosphere } from "./photo-atmosphere";
+import * as styles from "./photo-essay.css";
+import {
+  atmosphereAccent,
+  essayAccent,
+  essayBackground,
+} from "./photo-style-vars.css";
 import { type PhotoChapter, photoChapters } from "./portfolio-data";
 
 type ChapterProps = {
   chapter: PhotoChapter;
+  chapterIndex: number;
 };
 
 function getChapterImageSizes(layout: string) {
@@ -23,75 +31,114 @@ function getChapterImageSizes(layout: string) {
   return "100vw";
 }
 
-function Chapter({ chapter }: ChapterProps) {
+function Chapter({ chapter, chapterIndex }: ChapterProps) {
   const t = useTranslations("Portfolio.modes.photography.essay");
   const titleId = `photo-title-${chapter.key}`;
 
   return (
     <section
       aria-labelledby={titleId}
-      className={`photo-chapter photo-${chapter.layout}`}
+      className={`${styles.chapter} ${chapterIndex > 0 ? styles.overlappingChapter : ""} ${styles.chapterLayout[chapter.layout]}`}
       data-photo-accent={chapter.accent}
       data-photo-animation={chapter.animation}
       data-photo-background={chapter.background}
-      style={
-        {
-          "--essay-accent": chapter.accent,
-        } as CSSProperties
-      }
+      data-photo-part="chapter"
+      style={assignInlineVars({ [essayAccent]: chapter.accent })}
     >
-      <div className="photo-stage">
-        <div className="photo-frame" data-cursor="view">
+      <div
+        className={`${styles.stage} ${styles.stageLayout[chapter.layout]}`}
+        data-photo-part="stage"
+      >
+        <div
+          className={`${styles.frame} ${styles.frameLayout[chapter.layout]}`}
+          data-cursor="view"
+          data-photo-part="frame"
+        >
           <Image
             alt={t(`chapters.${chapter.key}.alt`)}
+            className={`${styles.image} ${styles.imageLayout[chapter.layout]}`}
+            data-photo-part="image"
             fill
             quality={72}
             sizes={getChapterImageSizes(chapter.layout)}
             src={`/img/sections/${chapter.file}`}
           />
           {chapter.animation === "shutters" ? (
-            <div className="photo-shutters" aria-hidden="true">
-              <span className="photo-shutter" />
-              <span className="photo-shutter" />
+            <div className={styles.shutters} aria-hidden="true">
+              <span className={styles.shutter} data-photo-part="shutter" />
+              <span className={styles.shutter} data-photo-part="shutter" />
             </div>
           ) : null}
           {chapter.animation === "pulse" ? (
-            <div className="photo-pulse-rings" aria-hidden="true">
-              <span />
-              <span />
-              <span />
+            <div className={styles.pulseRings} aria-hidden="true">
+              <span className={styles.pulseRing} data-photo-part="pulse-ring" />
+              <span className={styles.pulseRing} data-photo-part="pulse-ring" />
+              <span className={styles.pulseRing} data-photo-part="pulse-ring" />
             </div>
           ) : null}
           {chapter.animation === "focus" ? (
-            <div className="photo-botanical-atmosphere" aria-hidden="true">
-              <span className="photo-botanical-aura" />
-              <span className="photo-pollen" />
-              <span className="photo-pollen" />
-              <span className="photo-pollen" />
-              <span className="photo-pollen" />
-              <span className="photo-pollen" />
+            <div className={styles.botanicalAtmosphere} aria-hidden="true">
+              <span
+                className={styles.botanicalAura}
+                data-photo-part="botanical-aura"
+              />
+              <span className={styles.pollen} data-photo-part="pollen" />
+              <span className={styles.pollen} data-photo-part="pollen" />
+              <span className={styles.pollen} data-photo-part="pollen" />
+              <span className={styles.pollen} data-photo-part="pollen" />
+              <span className={styles.pollen} data-photo-part="pollen" />
             </div>
           ) : null}
           {chapter.animation === "perspective" ? (
-            <div className="photo-time-orbit" aria-hidden="true">
-              <span className="photo-time-ring photo-time-ring-outer" />
-              <span className="photo-time-ring photo-time-ring-inner" />
-              <span className="photo-time-hand" />
-              <span className="photo-time-center" />
+            <div className={styles.timeOrbit} aria-hidden="true">
+              <span
+                className={`${styles.timeRing} ${styles.timeRingOuter}`}
+                data-photo-part="time-ring"
+              />
+              <span
+                className={`${styles.timeRing} ${styles.timeRingInner}`}
+                data-photo-part="time-ring"
+              />
+              <span className={styles.timeHand} data-photo-part="time-hand" />
+              <span
+                className={styles.timeCenter}
+                data-photo-part="time-center"
+              />
             </div>
           ) : null}
         </div>
 
-        <div className="photo-copy">
-          <div className="photo-meta">
-            <span className="photo-number">{chapter.index}</span>
+        <div
+          className={`${styles.copy} ${styles.copyLayout[chapter.layout]}`}
+          data-photo-part="copy"
+        >
+          <div
+            className={`${styles.meta} ${styles.metaLayout[chapter.layout]}`}
+          >
+            <span className={styles.number} data-photo-part="number">
+              {chapter.index}
+            </span>
             <span>{t(`chapters.${chapter.key}.eyebrow`)}</span>
           </div>
-          <div className="photo-title-clip">
-            <h3 id={titleId}>{t(`chapters.${chapter.key}.title`)}</h3>
+          <div className={styles.titleClip}>
+            <h3
+              className={`${styles.title} ${styles.titleLayout[chapter.layout]}`}
+              data-photo-part="title"
+              id={titleId}
+            >
+              {t(`chapters.${chapter.key}.title`)}
+            </h3>
           </div>
-          <span className="photo-rule" aria-hidden="true" />
-          <p>{t(`chapters.${chapter.key}.copy`)}</p>
+          <span
+            aria-hidden="true"
+            className={`${styles.rule} ${styles.ruleLayout[chapter.layout]}`}
+            data-photo-part="rule"
+          />
+          <p
+            className={`${styles.description} ${styles.descriptionLayout[chapter.layout]}`}
+          >
+            {t(`chapters.${chapter.key}.copy`)}
+          </p>
         </div>
       </div>
     </section>
@@ -106,41 +153,49 @@ export function PhotoEssay() {
 
   return (
     <div
-      className="photo-essay"
+      className={styles.root}
       ref={root}
-      style={
-        {
-          "--essay-accent": photoChapters[0].accent,
-          "--essay-bg": photoChapters[0].background,
-          "--atmosphere-accent": photoChapters[0].accent,
-        } as CSSProperties
-      }
+      style={assignInlineVars({
+        [essayAccent]: photoChapters[0].accent,
+        [essayBackground]: photoChapters[0].background,
+        [atmosphereAccent]: photoChapters[0].accent,
+      })}
     >
       <PhotoAtmosphere />
 
-      <nav className="photo-progress" aria-label={t("navigationLabel")}>
+      <nav className={styles.progress} aria-label={t("navigationLabel")}>
         {photoChapters.map((chapter) => (
           <a
             aria-label={t("goTo", {
               title: t(`chapters.${chapter.key}.title`),
             })}
+            className={styles.progressLink}
             href={`#photo-title-${chapter.key}`}
             key={chapter.key}
           >
-            <span />
+            <span
+              className={styles.progressMark}
+              data-photo-part="progress-mark"
+            />
           </a>
         ))}
       </nav>
 
-      <header className="photo-essay-intro reveal">
-        <p className="section-label">{t("label")}</p>
-        <h2 id="work-title">{t("title")}</h2>
-        <p>{t("introduction")}</p>
-        <span>{t("direction")}</span>
+      <header className={styles.intro} data-animate="reveal">
+        <p className={styles.introLabel}>{t("label")}</p>
+        <h2 className={styles.introTitle} id="work-title">
+          {t("title")}
+        </h2>
+        <p className={styles.introDescription}>{t("introduction")}</p>
+        <span className={styles.introDirection}>{t("direction")}</span>
       </header>
 
-      {photoChapters.map((chapter) => (
-        <Chapter chapter={chapter} key={chapter.key} />
+      {photoChapters.map((chapter, chapterIndex) => (
+        <Chapter
+          chapter={chapter}
+          chapterIndex={chapterIndex}
+          key={chapter.key}
+        />
       ))}
     </div>
   );

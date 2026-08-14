@@ -1,5 +1,6 @@
-import "../globals.css";
 import "lenis/dist/lenis.css";
+import "@/styles/global.css";
+import "@/styles/theme.css";
 
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";

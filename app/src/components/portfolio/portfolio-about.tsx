@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 
+import * as styles from "./portfolio-about.css";
 import { type PortfolioMode, portfolioSkills } from "./portfolio-data";
 
 type PortfolioAboutProps = {
@@ -10,20 +11,22 @@ export function PortfolioAbout({ mode }: PortfolioAboutProps) {
   const t = useTranslations("Portfolio");
 
   return (
-    <section className="about-section" id="about">
-      <div className="about-card reveal">
-        <div className="about-mark" aria-hidden="true">
+    <section className={styles.root} id="about">
+      <div className={styles.card} data-animate="reveal">
+        <div className={styles.mark} aria-hidden="true">
           LP / {mode === "photography" ? "PHOTO" : "DEV"}
         </div>
         <div>
-          <p className="section-label">{t("about.label")}</p>
-          <h2>{t("about.title")}</h2>
+          <p className={styles.label}>{t("about.label")}</p>
+          <h2 className={styles.title}>{t("about.title")}</h2>
         </div>
-        <div className="about-copy">
-          <p>{t("about.copy")}</p>
-          <div className="skill-list" aria-label={t("about.skillsLabel")}>
+        <div className={styles.copy}>
+          <p className={styles.description}>{t("about.copy")}</p>
+          <div className={styles.skills} aria-label={t("about.skillsLabel")}>
             {portfolioSkills[mode].map((skill) => (
-              <span key={skill}>{t(`modes.${mode}.skills.${skill}`)}</span>
+              <span className={styles.skill} key={skill}>
+                {t(`modes.${mode}.skills.${skill}`)}
+              </span>
             ))}
           </div>
         </div>

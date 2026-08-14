@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 import { PhotoEssay } from "./photo-essay";
 import { developmentProjects, type PortfolioMode } from "./portfolio-data";
+import * as styles from "./portfolio-work.css";
 import { ProjectCard } from "./project-card";
 
 type PortfolioWorkProps = {
@@ -16,7 +17,7 @@ export function PortfolioWork({ mode }: PortfolioWorkProps) {
   if (mode === "photography") {
     return (
       <section
-        className="work-section photo-work-section"
+        className={`${styles.root} ${styles.photoRoot}`}
         id="work"
         aria-labelledby="work-title"
       >
@@ -26,7 +27,7 @@ export function PortfolioWork({ mode }: PortfolioWorkProps) {
   }
 
   return (
-    <section className="work-section" id="work" aria-labelledby="work-title">
+    <section className={styles.root} id="work" aria-labelledby="work-title">
       <SectionHeading
         introduction={t(`modes.${mode}.work.introduction`)}
         label={t(`modes.${mode}.work.label`)}
@@ -34,7 +35,7 @@ export function PortfolioWork({ mode }: PortfolioWorkProps) {
         titleId="work-title"
       />
 
-      <div className={`project-grid ${mode}-grid`}>
+      <div className={styles.grid}>
         {developmentProjects.map((project, index) => (
           <ProjectCard
             isFeatured={index === 0}

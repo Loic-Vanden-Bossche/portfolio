@@ -8,6 +8,18 @@ export type PortfolioProject = {
   tone: string;
 };
 
+export type PhotoLayout =
+  | "abyss"
+  | "botanical"
+  | "city"
+  | "clock"
+  | "horizon"
+  | "monument"
+  | "nightline"
+  | "panorama"
+  | "spiral"
+  | "witness";
+
 export const developmentProjects = [
   { index: "01", key: "interfaces", tone: "cyan" },
   { index: "02", key: "systems", tone: "violet" },
@@ -21,7 +33,7 @@ export type PhotoChapter = {
   file: string;
   index: string;
   key: string;
-  layout: string;
+  layout: PhotoLayout;
 };
 
 export const photoChapters = [

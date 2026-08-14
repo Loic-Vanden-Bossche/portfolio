@@ -12,12 +12,15 @@ export function SectionHeading({
   titleId,
 }: SectionHeadingProps) {
   return (
-    <div className="section-heading reveal">
+    <div className={styles.root} data-animate="reveal">
       <div>
-        <p className="section-label">{label}</p>
-        <h2 id={titleId}>{title}</h2>
+        <p className={styles.label}>{label}</p>
+        <h2 className={styles.title} id={titleId}>
+          {title}
+        </h2>
       </div>
-      <p>{introduction}</p>
+      <p className={styles.introduction}>{introduction}</p>
     </div>
   );
 }
+import * as styles from "./section-heading.css";

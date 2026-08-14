@@ -14,6 +14,8 @@ import { ReturnToTop } from "@/components/ui/return-to-top";
 import { usePortfolioMode } from "@/hooks/use-portfolio-mode";
 import { usePortfolioMotion } from "@/hooks/use-portfolio-motion";
 
+import * as styles from "./portfolio-experience.css";
+
 export function PortfolioExperience() {
   const root = useRef<HTMLDivElement>(null);
   const stage = useRef<HTMLDivElement>(null);
@@ -26,12 +28,22 @@ export function PortfolioExperience() {
   usePortfolioMotion(root, stage, mode);
 
   return (
-    <div className="site-shell" data-mode={mode} ref={root}>
-      <div className="scene" aria-hidden="true">
+    <div className={styles.root} data-mode={mode} ref={root}>
+      <div
+        aria-hidden="true"
+        className={`${styles.scene} ${mode === "development" ? styles.developmentScene : ""}`}
+        data-animate="scene"
+      >
         <CosmicScene />
       </div>
-      <div className="ambient ambient-one" aria-hidden="true" />
-      <div className="ambient ambient-two" aria-hidden="true" />
+      <div
+        aria-hidden="true"
+        className={`${styles.ambient} ${styles.ambientPrimary}`}
+      />
+      <div
+        aria-hidden="true"
+        className={`${styles.ambient} ${styles.ambientSecondary}`}
+      />
 
       <ModeCurtain nextMode={nextMode} ref={curtain} />
       <PortfolioHeader
@@ -44,12 +56,12 @@ export function PortfolioExperience() {
       <div
         aria-busy={isSwitching}
         aria-labelledby={`${mode}-tab`}
-        className="mode-stage"
+        className={styles.stage}
         id="portfolio-panel"
         ref={stage}
         role="tabpanel"
       >
-        <main>
+        <main className={styles.main}>
           <PortfolioHero mode={mode} />
           <PortfolioWork mode={mode} />
           <PortfolioAbout mode={mode} />

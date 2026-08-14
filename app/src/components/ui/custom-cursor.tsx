@@ -4,6 +4,8 @@ import gsap from "gsap";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
+import * as styles from "./custom-cursor.css";
+
 type CursorMode = "default" | "link" | "switch" | "view";
 
 function resolveCursorMode(target: EventTarget | null): CursorMode {
@@ -70,7 +72,7 @@ export function CustomCursor() {
       xPercent: -50,
       yPercent: -50,
     });
-    rootElement.classList.add("has-custom-cursor");
+    rootElement.classList.add(styles.enabledDocument);
 
     function handlePointerMove(event: PointerEvent) {
       movePrimaryX(event.clientX);
@@ -115,7 +117,7 @@ export function CustomCursor() {
     );
 
     return () => {
-      rootElement.classList.remove("has-custom-cursor");
+      rootElement.classList.remove(styles.enabledDocument);
       window.removeEventListener("pointermove", handlePointerMove);
       document.removeEventListener("pointerover", handlePointerOver);
       document.removeEventListener("pointerout", handlePointerOut);
@@ -129,10 +131,12 @@ export function CustomCursor() {
   }, []);
 
   return (
-    <div className="custom-cursor" aria-hidden="true">
-      <span className="cursor-primary" ref={primary} />
-      <span className="cursor-follower" data-mode={mode} ref={follower}>
-        <span>{mode === "default" ? "" : t(mode)}</span>
+    <div className={styles.root} aria-hidden="true">
+      <span className={styles.primary} ref={primary} />
+      <span className={styles.follower} data-mode={mode} ref={follower}>
+        <span className={styles.label}>
+          {mode === "default" ? "" : t(mode)}
+        </span>
       </span>
     </div>
   );

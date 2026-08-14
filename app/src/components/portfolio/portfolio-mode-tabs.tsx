@@ -5,6 +5,7 @@ import {
   type PortfolioMode,
   portfolioModes,
 } from "./portfolio-data";
+import * as styles from "./portfolio-mode-tabs.css";
 
 type PortfolioModeTabsProps = {
   activeMode: PortfolioMode;
@@ -21,7 +22,7 @@ export function PortfolioModeTabs({
 
   return (
     <div
-      className="discipline-switcher"
+      className={styles.root}
       aria-label={t("navigation.disciplineLabel")}
       role="tablist"
     >
@@ -29,6 +30,7 @@ export function PortfolioModeTabs({
         <button
           aria-controls="portfolio-panel"
           aria-selected={activeMode === mode}
+          className={styles.tab}
           data-cursor="switch"
           disabled={disabled}
           id={`${mode}-tab`}
@@ -37,7 +39,7 @@ export function PortfolioModeTabs({
           role="tab"
           type="button"
         >
-          <span>{getModeNumber(mode)}</span>
+          <span className={styles.index}>{getModeNumber(mode)}</span>
           {t(`modes.${mode}.shortLabel`)}
         </button>
       ))}

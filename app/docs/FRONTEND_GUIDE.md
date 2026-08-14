@@ -232,6 +232,25 @@ Husky is stored under `app/.husky` because the Git root is one directory above t
 - `commit-msg` runs Commitlint with the conventional configuration.
 - Commit messages should follow Conventional Commits, for example `feat: add project gallery` or `fix: restore webgl canvas`.
 
+## Vanilla Extract styling architecture
+
+Vanilla Extract owns application presentation. React owns state, GSAP owns orchestrated and scroll-linked motion, and Lenis owns smooth scrolling. Do not reintroduce a monolithic stylesheet or use generated Vanilla Extract class names as behavior selectors.
+
+- `src/styles/theme.css.ts` defines the typed global theme: semantic colors, fonts, typography rhythm, radii, shadows, layout widths, motion constants, and stacking layers.
+- `src/styles/breakpoints.ts` is the source of truth for the existing 1040px, 800px, and 430px boundaries plus pointer, data, and motion capability queries.
+- `src/styles/global.css.ts` is limited to document reset/defaults, selection, and reduced-motion safety.
+- `src/styles/runtime.css.ts` owns typed mode accent variables shared across otherwise independent components.
+- `src/styles/typography.css.ts` contains only the stable display-heading and section-label primitives.
+- Substantial visual components own colocated `.css.ts` files. If removing a component makes a style unnecessary, keep that style with the component.
+- The photography essay owns its typed runtime variables in `photo-style-vars.css.ts`; `@vanilla-extract/dynamic` assigns chapter and particle values without generating styles during render.
+- GSAP targets `data-animate` and `data-photo-part` attributes. Class names are presentation-only and may change when style modules are reorganized.
+- Runtime values intentionally remain runtime values: chapter palettes, particle geometry/timing, GSAP transforms, clip paths, opacity, and Three.js values.
+- Recipes and Sprinkles are not used. The current components have no stable multi-variant primitive that justifies Recipes, and the editorial layouts would become less readable behind an atomic Sprinkles layer.
+- Keep `@vanilla-extract/dynamic` in application dependencies because `assignInlineVars` runs in client-rendered photography components. Keep the compiler and Next plugin in development dependencies.
+- Next 16 Turbopack support requires `unstable_turbopack: { mode: "auto" }` in the Vanilla Extract plugin configuration. Preserve plugin composition with next-intl.
+
+The only intentional `!important` rules are the botanical and nightline image-height crops. Next Image's `fill` mode writes inline geometry, so these narrow generated CSS overrides are required to preserve the established art direction.
+
 ## Completion checklist
 
 For frontend changes, run from `app/`:

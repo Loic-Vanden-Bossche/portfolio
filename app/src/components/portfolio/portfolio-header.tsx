@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { LocaleSwitcher } from "@/components/ui/locale-switcher";
 
 import type { PortfolioMode } from "./portfolio-data";
+import * as styles from "./portfolio-header.css";
 import { PortfolioModeTabs } from "./portfolio-mode-tabs";
 
 type PortfolioHeaderProps = {
@@ -19,9 +20,9 @@ export function PortfolioHeader({
   const t = useTranslations("Portfolio.navigation");
 
   return (
-    <header className="topbar hero-reveal">
-      <a className="brand" href="#top" aria-label={t("homeLabel")}>
-        LP<span>.</span>
+    <header className={styles.root} data-animate="hero-reveal">
+      <a className={styles.brand} href="#top" aria-label={t("homeLabel")}>
+        LP<span className={styles.brandAccent}>.</span>
       </a>
 
       <PortfolioModeTabs
@@ -30,9 +31,13 @@ export function PortfolioHeader({
         onChange={onModeChange}
       />
 
-      <nav aria-label={t("primaryLabel")}>
-        <a href="#work">{t("work")}</a>
-        <a href="#about">{t("about")}</a>
+      <nav aria-label={t("primaryLabel")} className={styles.navigation}>
+        <a className={styles.navigationLink} href="#work">
+          {t("work")}
+        </a>
+        <a className={styles.navigationLink} href="#about">
+          {t("about")}
+        </a>
         <LocaleSwitcher />
       </nav>
     </header>

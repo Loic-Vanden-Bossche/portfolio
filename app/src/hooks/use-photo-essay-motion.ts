@@ -2,6 +2,18 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { type RefObject, useEffect } from "react";
 
+import {
+  atmosphereAccent,
+  essayAccent,
+} from "@/components/portfolio/photo-style-vars.css";
+
+function getCustomProperty(variableReference: string) {
+  return variableReference.slice(4, -1);
+}
+
+const essayAccentProperty = getCustomProperty(essayAccent);
+const atmosphereAccentProperty = getCustomProperty(atmosphereAccent);
+
 function scrollReveal(trigger: HTMLElement) {
   return {
     scrollTrigger: {
@@ -23,34 +35,48 @@ export function usePhotoEssayMotion(root: RefObject<HTMLDivElement | null>) {
         const enableDepthMotion = window.matchMedia(
           "(min-width: 900px) and (pointer: fine)",
         ).matches;
-        const chapters = gsap.utils.toArray<HTMLElement>(".photo-chapter");
+        const chapters = gsap.utils.toArray<HTMLElement>(
+          '[data-photo-part="chapter"]',
+        );
         const progressMarks = gsap.utils.toArray<HTMLElement>(
-          ".photo-progress span",
+          '[data-photo-part="progress-mark"]',
         );
         const atmosphere = root.current?.querySelector<HTMLElement>(
-          ".photo-atmosphere-viewport",
+          '[data-photo-part="atmosphere"]',
         );
         const atmosphereGlows = gsap.utils.toArray<HTMLElement>(
-          ".photo-atmosphere-glow",
+          '[data-photo-part="atmosphere-glow"]',
         );
         const atmosphereParticles = gsap.utils.toArray<HTMLElement>(
-          ".photo-atmosphere-particle",
+          '[data-photo-part="atmosphere-particle"]',
         );
         const atmosphereWire = root.current?.querySelector<SVGSVGElement>(
-          ".photo-atmosphere-wire",
+          '[data-photo-part="atmosphere-wire"]',
         );
         const atmosphereWireEnergy =
           root.current?.querySelector<SVGPathElement>(
-            ".photo-atmosphere-wire-energy",
+            '[data-photo-part="atmosphere-wire-energy"]',
           );
 
         chapters.forEach((chapter, index) => {
-          const frame = chapter.querySelector<HTMLElement>(".photo-frame");
-          const image = chapter.querySelector<HTMLElement>("img");
-          const copy = chapter.querySelector<HTMLElement>(".photo-copy");
-          const title = chapter.querySelector<HTMLElement>("h3");
-          const number = chapter.querySelector<HTMLElement>(".photo-number");
-          const rule = chapter.querySelector<HTMLElement>(".photo-rule");
+          const frame = chapter.querySelector<HTMLElement>(
+            '[data-photo-part="frame"]',
+          );
+          const image = chapter.querySelector<HTMLElement>(
+            '[data-photo-part="image"]',
+          );
+          const copy = chapter.querySelector<HTMLElement>(
+            '[data-photo-part="copy"]',
+          );
+          const title = chapter.querySelector<HTMLElement>(
+            '[data-photo-part="title"]',
+          );
+          const number = chapter.querySelector<HTMLElement>(
+            '[data-photo-part="number"]',
+          );
+          const rule = chapter.querySelector<HTMLElement>(
+            '[data-photo-part="rule"]',
+          );
           const animation = chapter.dataset.photoAnimation;
 
           if (!frame || !image || !copy || !title || !number) return;
@@ -60,11 +86,11 @@ export function usePhotoEssayMotion(root: RefObject<HTMLDivElement | null>) {
             const background = chapter.dataset.photoBackground ?? "#07120d";
 
             gsap.set(root.current, {
-              "--essay-accent": accent,
+              [essayAccentProperty]: accent,
             });
             if (atmosphere) {
               gsap.to(atmosphere, {
-                "--atmosphere-accent": accent,
+                [atmosphereAccentProperty]: accent,
                 backgroundColor: background,
                 duration: 1.05,
                 ease: "power2.inOut",
@@ -175,10 +201,11 @@ export function usePhotoEssayMotion(root: RefObject<HTMLDivElement | null>) {
 
           if (animation === "focus") {
             const aura = chapter.querySelector<HTMLElement>(
-              ".photo-botanical-aura",
+              '[data-photo-part="botanical-aura"]',
             );
-            const pollen =
-              chapter.querySelectorAll<HTMLElement>(".photo-pollen");
+            const pollen = chapter.querySelectorAll<HTMLElement>(
+              '[data-photo-part="pollen"]',
+            );
 
             gsap.from(frame, {
               opacity: 0,
@@ -325,12 +352,15 @@ export function usePhotoEssayMotion(root: RefObject<HTMLDivElement | null>) {
           }
 
           if (animation === "perspective") {
-            const timeRings =
-              chapter.querySelectorAll<HTMLElement>(".photo-time-ring");
-            const timeHand =
-              chapter.querySelector<HTMLElement>(".photo-time-hand");
-            const timeCenter =
-              chapter.querySelector<HTMLElement>(".photo-time-center");
+            const timeRings = chapter.querySelectorAll<HTMLElement>(
+              '[data-photo-part="time-ring"]',
+            );
+            const timeHand = chapter.querySelector<HTMLElement>(
+              '[data-photo-part="time-hand"]',
+            );
+            const timeCenter = chapter.querySelector<HTMLElement>(
+              '[data-photo-part="time-center"]',
+            );
 
             gsap.from(frame, {
               opacity: 0,
@@ -483,8 +513,9 @@ export function usePhotoEssayMotion(root: RefObject<HTMLDivElement | null>) {
           }
 
           if (animation === "shutters") {
-            const shutters =
-              chapter.querySelectorAll<HTMLElement>(".photo-shutter");
+            const shutters = chapter.querySelectorAll<HTMLElement>(
+              '[data-photo-part="shutter"]',
+            );
             gsap.to(shutters[0], {
               xPercent: -102,
               duration: 1.25,
@@ -549,7 +580,7 @@ export function usePhotoEssayMotion(root: RefObject<HTMLDivElement | null>) {
 
           if (animation === "pulse") {
             const rings = chapter.querySelectorAll<HTMLElement>(
-              ".photo-pulse-rings span",
+              '[data-photo-part="pulse-ring"]',
             );
 
             if (enableDepthMotion) {
@@ -599,22 +630,24 @@ export function usePhotoEssayMotion(root: RefObject<HTMLDivElement | null>) {
       });
 
       media.add("(prefers-reduced-motion: reduce)", () => {
-        const chapters = gsap.utils.toArray<HTMLElement>(".photo-chapter");
+        const chapters = gsap.utils.toArray<HTMLElement>(
+          '[data-photo-part="chapter"]',
+        );
         const atmosphere = root.current?.querySelector<HTMLElement>(
-          ".photo-atmosphere-viewport",
+          '[data-photo-part="atmosphere"]',
         );
         const progressMarks = gsap.utils.toArray<HTMLElement>(
-          ".photo-progress span",
+          '[data-photo-part="progress-mark"]',
         );
 
         chapters.forEach((chapter, index) => {
           const applyTheme = () => {
             const accent = chapter.dataset.photoAccent ?? "#c8f06a";
 
-            gsap.set(root.current, { "--essay-accent": accent });
+            gsap.set(root.current, { [essayAccentProperty]: accent });
             if (atmosphere) {
               gsap.set(atmosphere, {
-                "--atmosphere-accent": accent,
+                [atmosphereAccentProperty]: accent,
                 backgroundColor: chapter.dataset.photoBackground ?? "#07120d",
               });
             }

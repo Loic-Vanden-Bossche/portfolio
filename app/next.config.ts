@@ -1,3 +1,4 @@
+import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin";
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
@@ -7,5 +8,8 @@ const nextConfig: NextConfig = {
   },
 };
 const withNextIntl = createNextIntlPlugin();
+const withVanillaExtract = createVanillaExtractPlugin({
+  unstable_turbopack: { mode: "auto" },
+});
 
-export default withNextIntl(nextConfig);
+export default withVanillaExtract(withNextIntl(nextConfig));

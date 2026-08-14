@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { getModeNumber, type PortfolioMode } from "./portfolio-data";
+import * as styles from "./portfolio-hero.css";
 
 type PortfolioHeroProps = {
   mode: PortfolioMode;
@@ -11,15 +12,16 @@ function PhotographyVisual() {
   const t = useTranslations("Portfolio.profile");
 
   return (
-    <figure className="portrait-frame" data-cursor="view">
+    <figure className={styles.portrait} data-cursor="view">
       <Image
         alt={t("imageAlt")}
+        className={styles.portraitImage}
         fill
         priority
         sizes="(max-width: 800px) 100vw, 42vw"
         src="/img/profile.png"
       />
-      <figcaption>
+      <figcaption className={styles.portraitCaption}>
         <span>{t("caption")}</span>
         <span>© {new Date().getFullYear()}</span>
       </figcaption>
@@ -29,23 +31,23 @@ function PhotographyVisual() {
 
 function DevelopmentVisual() {
   return (
-    <div className="code-window" aria-hidden="true" data-cursor="view">
-      <div className="code-window-bar">
-        <span />
-        <span />
-        <span />
-        <p>portfolio.tsx</p>
+    <div aria-hidden="true" className={styles.codeWindow} data-cursor="view">
+      <div className={styles.codeBar}>
+        <span className={styles.codeDot} />
+        <span className={styles.codeDot} />
+        <span className={styles.codeDot} />
+        <p className={styles.codeFile}>portfolio.tsx</p>
       </div>
-      <div className="code-lines">
-        <i />
-        <i />
-        <i />
-        <i />
-        <i />
-        <i />
+      <div className={styles.codeLines}>
+        <i className={styles.codeLine} />
+        <i className={styles.codeLine} />
+        <i className={styles.codeLine} />
+        <i className={styles.codeLine} />
+        <i className={styles.codeLine} />
+        <i className={styles.codeLine} />
       </div>
-      <div className="code-orbit" />
-      <p>
+      <div className={styles.codeOrbit} />
+      <p className={styles.codeSteps}>
         01 / CREATE
         <br />
         02 / ITERATE
@@ -60,24 +62,31 @@ export function PortfolioHero({ mode }: PortfolioHeroProps) {
   const t = useTranslations("Portfolio");
 
   return (
-    <section className="hero" id="top">
-      <div className="hero-copy">
-        <p className="hero-kicker hero-reveal">{t(`modes.${mode}.kicker`)}</p>
-        <h1 className="hero-reveal">
+    <section className={styles.root} id="top">
+      <div className={styles.copy}>
+        <p className={styles.kicker} data-animate="hero-reveal">
+          {t(`modes.${mode}.kicker`)}
+        </p>
+        <h1 className={styles.title} data-animate="hero-reveal">
           {t(`modes.${mode}.titleLineOne`)}
-          <span>{t(`modes.${mode}.titleLineTwo`)}</span>
+          <span className={styles.titleAccent}>
+            {t(`modes.${mode}.titleLineTwo`)}
+          </span>
         </h1>
-        <p className="hero-introduction hero-reveal">
+        <p className={styles.introduction} data-animate="hero-reveal">
           {t(`modes.${mode}.introduction`)}
         </p>
-        <a className="text-action hero-reveal" href="#work">
-          {t(`modes.${mode}.explore`)} <span aria-hidden="true">↓</span>
+        <a className={styles.action} data-animate="hero-reveal" href="#work">
+          {t(`modes.${mode}.explore`)}{" "}
+          <span aria-hidden="true" className={styles.actionArrow}>
+            ↓
+          </span>
         </a>
       </div>
 
-      <div className="hero-visual hero-reveal">
+      <div className={styles.visual} data-animate="hero-reveal">
         {mode === "photography" ? <PhotographyVisual /> : <DevelopmentVisual />}
-        <span className="visual-number">{getModeNumber(mode)} / 02</span>
+        <span className={styles.number}>{getModeNumber(mode)} / 02</span>
       </div>
     </section>
   );

@@ -4,6 +4,8 @@ import { useTransition } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 
+import * as styles from "./locale-switcher.css";
+
 const locales = ["en", "fr"] as const satisfies readonly AppLocale[];
 
 export function LocaleSwitcher() {
@@ -24,16 +26,12 @@ export function LocaleSwitcher() {
   }
 
   return (
-    <div
-      className="language-switcher"
-      aria-label={t("languageLabel")}
-      role="group"
-    >
+    <div className={styles.root} aria-label={t("languageLabel")} role="group">
       {locales.map((item) => (
         <button
           aria-label={t(item === "en" ? "english" : "french")}
           aria-pressed={locale === item}
-          className={locale === item ? "active" : undefined}
+          className={`${styles.option} ${locale === item ? styles.active : ""}`}
           disabled={isPending}
           key={item}
           onClick={() => changeLocale(item)}
