@@ -7,3 +7,6 @@ infrastructure/.terraform/
 infrastructure/*.tfstate
 infrastructure/*.tfstate.*
 infrastructure/*.tfvars
+infrastructure/*.tfplan
+infrastructure/crash.log
+infrastructure/crash.*.log

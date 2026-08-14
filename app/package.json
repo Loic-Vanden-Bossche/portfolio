@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "deploy": "node scripts/deploy.mjs",
     "prod": "yarn build && yarn start",
     "start": "next start",
     "lint": "eslint",
