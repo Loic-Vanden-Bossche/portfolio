@@ -216,7 +216,7 @@ The latest compatible Three.js release currently emits a `THREE.Clock` deprecati
 
 ## Code quality tooling
 
-The application uses Yarn Classic. `package.json` and `yarn.lock` are the dependency sources of truth.
+The application uses Yarn Berry through the version pinned in `package.json`. `.yarnrc.yml` keeps the `node-modules` linker for compatibility with Next.js native tooling, Prisma, and Husky. `package.json` and `yarn.lock` are the dependency sources of truth; use Corepack to run the repository-pinned Yarn release. The `postinstall` lifecycle regenerates Prisma Client after dependency installs because Berry does not guarantee that Prisma's dependency-level generation lands in the application module tree.
 
 - ESLint uses the Next.js flat configuration, `eslint-plugin-prettier`, and `eslint-plugin-simple-import-sort`.
 - `yarn lint` must pass without warnings after editing JavaScript or TypeScript-compatible files.

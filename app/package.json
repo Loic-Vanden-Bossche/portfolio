@@ -2,7 +2,7 @@
   "name": "portfolio-app",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "yarn@1.22.22",
+  "packageManager": "yarn@4.18.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,6 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "optimize:photos": "node scripts/optimize-photo-assets.mjs",
+    "postinstall": "prisma generate",
     "prepare": "cd .. && app/node_modules/.bin/husky app/.husky",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
