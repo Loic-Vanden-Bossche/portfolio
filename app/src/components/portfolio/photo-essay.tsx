@@ -3,15 +3,19 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useRef } from "react";
 
+import { StoryTransitionLink } from "@/components/motion/story-transition-link";
 import { usePhotoEssayMotion } from "@/hooks/use-photo-essay-motion";
 
 import { PhotoAtmosphere } from "./photo-atmosphere";
+import { PhotoCategoryIcon } from "./photo-category-icon";
 import * as styles from "./photo-essay.css";
+import { getPhotoAsset, getPhotoCategory } from "./photo-library";
 import {
   atmosphereAccent,
   essayAccent,
   essayBackground,
 } from "./photo-style-vars.css";
+import { usePhotoViewer } from "./photo-viewer-provider";
 import { type PhotoChapter, photoChapters } from "./portfolio-data";
 
 type ChapterProps = {
@@ -33,7 +37,11 @@ function getChapterImageSizes(layout: string) {
 
 function Chapter({ chapter, chapterIndex }: ChapterProps) {
   const t = useTranslations("Portfolio.modes.photography.essay");
+  const archiveT = useTranslations("PhotographyArchive");
   const titleId = `photo-title-${chapter.key}`;
+  const asset = getPhotoAsset(chapter.key)!;
+  const category = getPhotoCategory(asset.primaryCategory);
+  const { openPhoto } = usePhotoViewer();
 
   return (
     <section
@@ -62,6 +70,18 @@ function Chapter({ chapter, chapterIndex }: ChapterProps) {
             quality={72}
             sizes={getChapterImageSizes(chapter.layout)}
             src={`/img/sections/${chapter.file}`}
+          />
+          <button
+            aria-label={archiveT("viewer.open", {
+              title: archiveT(`images.${asset.id}.title`),
+            })}
+            className={styles.viewerButton}
+            data-cursor="view"
+            onClick={(event) => {
+              const frame = event.currentTarget.parentElement;
+              if (frame) openPhoto({ asset, sourceElement: frame });
+            }}
+            type="button"
           />
           {chapter.animation === "shutters" ? (
             <div className={styles.shutters} aria-hidden="true">
@@ -139,6 +159,14 @@ function Chapter({ chapter, chapterIndex }: ChapterProps) {
           >
             {t(`chapters.${chapter.key}.copy`)}
           </p>
+          <StoryTransitionLink
+            category={category.slug}
+            className={styles.categoryBadge}
+            href={`/photography/${category.slug}`}
+          >
+            <PhotoCategoryIcon icon={category.icon} size={15} />
+            {archiveT(`categories.${category.slug}.title`)}
+          </StoryTransitionLink>
         </div>
       </div>
     </section>

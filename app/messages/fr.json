@@ -3,6 +3,217 @@
     "title": "Loic — Portfolio photographie & développement",
     "description": "Une archive personnelle de photographies, de développement et d'expérimentations créatives par Loic."
   },
+  "PhotographyArchive": {
+    "storyLabel": "Récit {current} / {total}",
+    "placeholderDisclosure": "Exemple du domaine public / à remplacer par un travail personnel",
+    "source": "Voir la source",
+    "viewer": {
+      "open": "Ouvrir {title} dans la visionneuse photo",
+      "close": "Fermer la visionneuse photo",
+      "technical": "Notes techniques",
+      "camera": "Appareil",
+      "lens": "Objectif",
+      "focalLength": "Focale",
+      "exposure": "Vitesse",
+      "aperture": "Ouverture",
+      "iso": "Sensibilité",
+      "capturedAt": "Prise de vue",
+      "dimensions": "Dimensions",
+      "unavailable": "Les réglages de prise de vue ne sont pas disponibles dans ce fichier source.",
+      "hint": "Échap pour fermer"
+    },
+    "navigation": {
+      "stories": "Récits",
+      "eyebrow": "Archives photographiques",
+      "title": "Choisir une manière de voir.",
+      "close": "Fermer les récits",
+      "home": "Accueil du portfolio",
+      "development": "Développement",
+      "storyNavigation": "Navigation du récit",
+      "adjacentStories": "Récits précédent et suivant",
+      "previous": "Récit précédent",
+      "next": "Récit suivant"
+    },
+    "index": {
+      "eyebrow": "Récits / Dix collections",
+      "title": "Suivre un autre fil.",
+      "introduction": "L'essai principal traverse lieux et sujets. Ces récits ralentissent pour suivre, un à un, dix instincts visuels."
+    },
+    "categories": {
+      "animals": {
+        "title": "Animaux",
+        "short": "Instinct, silence et vies qui avancent près des nôtres.",
+        "introduction": "Une étude de l'attention entre eau, air et feuillage — des créatures qui ne se révèlent que lorsque le photographe apprend à attendre.",
+        "metadataTitle": "Animaux — Récit photographique de Loic",
+        "metadataDescription": "Un récit photographique autour de la présence animale, de l'instinct et de l'observation silencieuse."
+      },
+      "birds": {
+        "title": "Oiseaux",
+        "short": "Patience, envol et géométrie d'un regard vigilant.",
+        "introduction": "Une seule rencontre peut contenir tout un paysage. Ici, la patience croise un regard fait pour la distance et le départ.",
+        "metadataTitle": "Oiseaux — Récit photographique de Loic",
+        "metadataDescription": "Un récit photographique façonné par la patience, l'envol et l'observation rapprochée."
+      },
+      "architecture": {
+        "title": "Architecture",
+        "short": "Des structures qui mesurent, abritent et résonnent.",
+        "introduction": "Les villes parlent par répétitions : un cadran, un escalier tournant, un instrument voûté, un quai aspiré par l'obscurité.",
+        "metadataTitle": "Architecture — Récit photographique de Loic",
+        "metadataDescription": "Un récit d'architecture explorant le temps, la structure, la géométrie et l'espace public."
+      },
+      "street": {
+        "title": "Rue",
+        "short": "Rencontres fortuites sur les lignes mobiles de la ville.",
+        "introduction": "En surface comme en dessous, la rue est moins un lieu qu'un courant — elle emporte corps, machines et lumière vers l'image suivante.",
+        "metadataTitle": "Rue — Récit photographique de Loic",
+        "metadataDescription": "Un récit de photographie de rue suivant les transports, la lumière artificielle et la ville en mouvement."
+      },
+      "landscape": {
+        "title": "Paysage",
+        "short": "Distance, météo et invitation d'une route ouverte.",
+        "introduction": "La terre retient la lumière à une autre échelle. Une route offre le passage ; une crête garde le dernier feu du jour.",
+        "metadataTitle": "Paysage — Récit photographique de Loic",
+        "metadataDescription": "Un récit de paysage allant des routes ouvertes à la dernière lumière sur une crête."
+      },
+      "portraits": {
+        "title": "Portraits",
+        "short": "Présence, caractère et espace autour d'un visage.",
+        "introduction": "Le portrait est une négociation entre une personne, un objectif et un instant. Ces études du domaine public réservent la place aux travaux personnels à venir.",
+        "metadataTitle": "Portraits — Récit photographique de Loic",
+        "metadataDescription": "Une étude du portrait avec des exemples du domaine public clairement identifiés, en attente de travaux personnels."
+      },
+      "nature-macro": {
+        "title": "Nature & Macro",
+        "short": "De petits mondes où la couleur devient paysage.",
+        "introduction": "S'approcher assez pour dissoudre l'échelle. Une aile devient architecture, une fleur devient météo, l'immobilité devient événement.",
+        "metadataTitle": "Nature & Macro — Récit photographique de Loic",
+        "metadataDescription": "Un récit de nature et macro autour de la couleur, de la proximité et des formes fragiles."
+      },
+      "abstract-details": {
+        "title": "Abstrait & Détails",
+        "short": "Formes, rythmes et choses familières devenues étranges.",
+        "introduction": "Le monde reconnaissable se plie en cercles, courants et marques mesurées — des détails libérés de leur fonction initiale.",
+        "metadataTitle": "Abstrait & Détails — Récit photographique de Loic",
+        "metadataDescription": "Un récit abstrait qui découvre rythme, géométrie et formes inattendues dans les sujets ordinaires."
+      },
+      "culture-events": {
+        "title": "Culture & Événements",
+        "short": "Lieux de rassemblement, rituels et salles qui gardent le son.",
+        "introduction": "La culture laisse des traces dans les instruments, les intérieurs et le silence partagé. Même vide, une salle peut sembler chargée d'un public.",
+        "metadataTitle": "Culture & Événements — Récit photographique de Loic",
+        "metadataDescription": "Un récit éditorial autour des lieux culturels, de la résonance et de la mémoire collective."
+      },
+      "still-life": {
+        "title": "Nature morte",
+        "short": "Des objets disposés jusqu'à ce que leur silence parle.",
+        "introduction": "Fruits, fleurs, livres et outils deviennent de petits théâtres de poids et d'équilibre. Ces exemples du domaine public réservent une place à une série personnelle.",
+        "metadataTitle": "Nature morte — Récit photographique de Loic",
+        "metadataDescription": "Une étude de nature morte avec des exemples du domaine public clairement identifiés, en attente de travaux personnels."
+      }
+    },
+    "images": {
+      "road": {
+        "title": "La première ligne",
+        "narrative": "La route ne traverse pas seulement la vallée ; elle donne une direction au regard. La distance devient une invitation avant même que le voyage commence.",
+        "alt": "Une route lumineuse serpente dans les champs verts de montagne sous un ciel dégagé"
+      },
+      "butterfly": {
+        "title": "Petite gravité",
+        "narrative": "Une aile pâle tient face à une couleur impossible. L'image récompense la proximité, mais aussi la retenue : un pas de plus briserait le charme.",
+        "alt": "Un papillon blanc posé sur des fleurs magenta éclatantes"
+      },
+      "heron": {
+        "title": "Le témoin patient",
+        "narrative": "L'immobilité n'est pas une absence. Dans l'œil du héron, l'attente devient mouvement concentré — un corps entier à l'écoute de l'instant du départ.",
+        "alt": "Profil rapproché d'un héron au long bec et à l'œil jaune vif"
+      },
+      "ridge": {
+        "title": "La crête se souvient du feu",
+        "narrative": "Pendant quelques minutes, la pierre porte la couleur des flammes. Plus bas, neige et ombre appartiennent déjà à la nuit qui approche.",
+        "alt": "Des crêtes enneigées brillent en orange dans la dernière lumière"
+      },
+      "clocks": {
+        "title": "L'heure bleue garde le temps",
+        "narrative": "Trois visages mesurent différemment le même soir. Autour d'eux, la ville passe de la lumière du jour à l'ordre illuminé.",
+        "alt": "Des tours d'horloge historiques entre des bâtiments sous un ciel bleu profond"
+      },
+      "metro": {
+        "title": "La ville s'élève",
+        "narrative": "Acier et pierre partagent le dernier or du jour. Le train apparaît brièvement au-dessus de la rue puis emporte ailleurs son histoire anonyme.",
+        "alt": "Un métro traverse un pont aérien parisien dans une lumière dorée"
+      },
+      "spiral": {
+        "title": "Vers le centre",
+        "narrative": "Vue d'en haut, la fonction disparaît. L'escalier devient orbite, la répétition devient attraction et le sol attend comme un point fixe lointain.",
+        "alt": "Un escalier en spirale vu du dessus tourne vers un centre décoré"
+      },
+      "organ": {
+        "title": "Cathédrale de souffle",
+        "narrative": "Les colonnes de métal attendent sous la voûte. Leur silence a du poids, car la salle semble déjà se souvenir de chaque note.",
+        "alt": "Un orgue richement décoré éclairé dans un intérieur voûté en pierre"
+      },
+      "underground": {
+        "title": "Ligne de nuit",
+        "narrative": "Sous la ville, la couleur remplace la météo. Orange, violet et acier transforment un quai ordinaire en scène entre deux arrivées.",
+        "alt": "Une station souterraine courbe avec un train orange et des quais lumineux"
+      },
+      "jellyfish": {
+        "title": "Après-vie électrique",
+        "narrative": "Le corps devient courant et le contour devient lumière. Elle avance sans horizon, portant sa propre atmosphère dans l'obscurité.",
+        "alt": "Une méduse bleue et ambrée lumineuse flotte dans l'obscurité"
+      },
+      "frieda-claus": {
+        "title": "Un intérieur silencieux",
+        "narrative": "Un regard composé et une lumière douce font de la retenue le sujet. Le portrait garde son époque sans perdre la personne qui l'habite.",
+        "alt": "Portrait historique monochrome de Frieda Gertrud Claus assise de profil"
+      },
+      "jessica-meir": {
+        "title": "Faite pour l'ailleurs",
+        "narrative": "La personne et l'équipement occupent le cadre à parts égales. La combinaison est décor et symbole, transformant le portrait officiel en seuil.",
+        "alt": "Portrait officiel noir et blanc de l'astronaute Jessica Meir en combinaison spatiale"
+      },
+      "ida-harper": {
+        "title": "Le regard direct",
+        "narrative": "La pose formelle laisse place à une attention directe. Posture et expression résistent à la distance imposée par l'archive.",
+        "alt": "Portrait historique en studio de l'écrivaine et militante Ida Husted Harper"
+      },
+      "nathan-mossell": {
+        "title": "Une vie dans la posture",
+        "narrative": "Vêtement, posture et expression forment une trace délibérée. L'image conserve l'accomplissement par la simple force d'une présence.",
+        "alt": "Portrait historique formel du médecin Nathan Francis Mossell"
+      },
+      "photographer-studio": {
+        "title": "Portrait d'une pratique",
+        "narrative": "L'appareil se retourne vers son propre monde. Personnes, outils et décor peint révèlent le portrait comme rencontre autant que construction.",
+        "alt": "Un photographe du dix-neuvième siècle et un groupe posent dans un studio"
+      },
+      "fruit-study": {
+        "title": "Poids et maturité",
+        "narrative": "Les fruits recueillent la lumière sur leurs courbes. L'arrangement paraît abondant, mais chaque objet reste dans un équilibre visuel précis.",
+        "alt": "Photographie historique de fruits disposés sur une table"
+      },
+      "vase-flowers": {
+        "title": "La floraison retenue",
+        "narrative": "Un vase donne un ordre temporaire à la croissance. Les pétales poussent vers l'extérieur tandis que la composition les tient dans un silence mesuré.",
+        "alt": "Nature morte historique de fleurs disposées dans un vase"
+      },
+      "books": {
+        "title": "Pages au repos",
+        "narrative": "Les livres fermés gardent leur contenu invisible et laissent textures, bords et poids accumulé raconter l'histoire autrement.",
+        "alt": "Une composition de nature morte avec des livres empilés et ouverts"
+      },
+      "barber-tools": {
+        "title": "Les outils entre deux gestes",
+        "narrative": "Des objets façonnés par l'usage attendent en suspension. Leur disposition dessine une main absente et le rituel qu'elle accomplit.",
+        "alt": "Des outils de barbier soigneusement disposés pour une nature morte"
+      },
+      "ceramics": {
+        "title": "Un récipient silencieux",
+        "narrative": "Un bol de porcelaine donne du volume au vide. Son bord, son émail et sa douce asymétrie transforment l'objet utile en étude de lumière retenue.",
+        "alt": "Un bol de porcelaine isolé dans une composition de nature morte épurée"
+      }
+    }
+  },
   "Portfolio": {
     "navigation": {
       "homeLabel": "Accueil du portfolio",

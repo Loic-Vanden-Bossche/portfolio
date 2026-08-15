@@ -6,6 +6,7 @@ import { CosmicScene } from "@/components/cosmic-scene";
 import { ArchiveNote } from "@/components/portfolio/archive-note";
 import { ModeCurtain } from "@/components/portfolio/mode-curtain";
 import { PortfolioAbout } from "@/components/portfolio/portfolio-about";
+import type { PortfolioMode } from "@/components/portfolio/portfolio-data";
 import { PortfolioFooter } from "@/components/portfolio/portfolio-footer";
 import { PortfolioHeader } from "@/components/portfolio/portfolio-header";
 import { PortfolioHero } from "@/components/portfolio/portfolio-hero";
@@ -16,13 +17,18 @@ import { usePortfolioMotion } from "@/hooks/use-portfolio-motion";
 
 import * as styles from "./portfolio-experience.css";
 
-export function PortfolioExperience() {
+type PortfolioExperienceProps = { initialMode?: PortfolioMode };
+
+export function PortfolioExperience({
+  initialMode = "photography",
+}: PortfolioExperienceProps) {
   const root = useRef<HTMLDivElement>(null);
   const stage = useRef<HTMLDivElement>(null);
   const curtain = useRef<HTMLDivElement>(null);
   const { changeMode, isSwitching, mode, nextMode } = usePortfolioMode(
     stage,
     curtain,
+    initialMode,
   );
 
   usePortfolioMotion(root, stage, mode);

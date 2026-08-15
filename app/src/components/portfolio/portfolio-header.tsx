@@ -5,6 +5,7 @@ import { LocaleSwitcher } from "@/components/ui/locale-switcher";
 import type { PortfolioMode } from "./portfolio-data";
 import * as styles from "./portfolio-header.css";
 import { PortfolioModeTabs } from "./portfolio-mode-tabs";
+import { StoriesDialog } from "./stories-dialog";
 
 type PortfolioHeaderProps = {
   isSwitching: boolean;
@@ -32,6 +33,7 @@ export function PortfolioHeader({
       />
 
       <nav aria-label={t("primaryLabel")} className={styles.navigation}>
+        <StoriesDialog />
         <a className={styles.navigationLink} href="#work">
           {t("work")}
         </a>

@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { type RefObject, useState } from "react";
+import { type RefObject, useEffect, useState } from "react";
 import { flushSync } from "react-dom";
 
 import { useSmoothScroll } from "@/components/motion/smooth-scroll-provider";
@@ -16,11 +16,42 @@ type PortfolioModeState = {
 export function usePortfolioMode(
   stage: RefObject<HTMLDivElement | null>,
   curtain: RefObject<HTMLDivElement | null>,
+  initialMode: PortfolioMode,
 ): PortfolioModeState {
   const smoothScroll = useSmoothScroll();
-  const [mode, setMode] = useState<PortfolioMode>("photography");
-  const [nextMode, setNextMode] = useState<PortfolioMode>("development");
+  const [mode, setMode] = useState<PortfolioMode>(initialMode);
+  const [nextMode, setNextMode] = useState<PortfolioMode>(
+    initialMode === "photography" ? "development" : "photography",
+  );
   const [isSwitching, setIsSwitching] = useState(false);
+
+  useEffect(() => {
+    function handleHistoryChange() {
+      const requestedMode: PortfolioMode =
+        new URL(window.location.href).searchParams.get("mode") === "development"
+          ? "development"
+          : "photography";
+      setMode(requestedMode);
+      setNextMode(
+        requestedMode === "photography" ? "development" : "photography",
+      );
+      requestAnimationFrame(() => ScrollTrigger.refresh());
+    }
+
+    window.addEventListener("popstate", handleHistoryChange);
+    return () => window.removeEventListener("popstate", handleHistoryChange);
+  }, []);
+
+  function updateModeUrl(requestedMode: PortfolioMode) {
+    const url = new URL(window.location.href);
+    if (requestedMode === "development") {
+      url.searchParams.set("mode", "development");
+    } else {
+      url.searchParams.delete("mode");
+    }
+    url.hash = "";
+    window.history.pushState(null, "", `${url.pathname}${url.search}`);
+  }
 
   function resetToModeStart() {
     smoothScroll.current?.scrollTo(0, { force: true, immediate: true });
@@ -43,6 +74,7 @@ export function usePortfolioMode(
 
     if (reducedMotion || !stage.current || !curtain.current) {
       resetToModeStart();
+      updateModeUrl(requestedMode);
       setMode(requestedMode);
       return;
     }
@@ -78,6 +110,7 @@ export function usePortfolioMode(
       )
       .add(() => {
         resetToModeStart();
+        updateModeUrl(requestedMode);
         flushSync(() => setMode(requestedMode));
         gsap.set(stage.current, {
           filter: "blur(14px)",

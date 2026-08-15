@@ -8,6 +8,8 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
 import { SmoothScrollProvider } from "@/components/motion/smooth-scroll-provider";
+import { StoryTransitionProvider } from "@/components/motion/story-transition-provider";
+import { PhotoViewerProvider } from "@/components/portfolio/photo-viewer-provider";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { routing } from "@/i18n/routing";
 
@@ -47,7 +49,9 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider>
           <SmoothScrollProvider>
-            {children}
+            <PhotoViewerProvider>
+              <StoryTransitionProvider>{children}</StoryTransitionProvider>
+            </PhotoViewerProvider>
             <CustomCursor />
           </SmoothScrollProvider>
         </NextIntlClientProvider>

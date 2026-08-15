@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 
 import { SectionHeading } from "@/components/ui/section-heading";
 
+import { PhotoCategoryIndex } from "./photo-category-index";
 import { PhotoEssay } from "./photo-essay";
 import { developmentProjects, type PortfolioMode } from "./portfolio-data";
 import * as styles from "./portfolio-work.css";
@@ -22,6 +23,7 @@ export function PortfolioWork({ mode }: PortfolioWorkProps) {
         aria-labelledby="work-title"
       >
         <PhotoEssay />
+        <PhotoCategoryIndex />
       </section>
     );
   }

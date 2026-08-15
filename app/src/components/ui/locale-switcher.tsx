@@ -19,9 +19,12 @@ export function LocaleSwitcher() {
     if (nextLocale === locale) return;
 
     startTransition(() => {
-      router.replace(`${pathname}${window.location.hash}`, {
-        locale: nextLocale,
-      });
+      router.replace(
+        `${pathname}${window.location.search}${window.location.hash}`,
+        {
+          locale: nextLocale,
+        },
+      );
     });
   }
 

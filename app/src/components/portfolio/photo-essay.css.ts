@@ -180,6 +180,21 @@ export const image = style({
   backfaceVisibility: "hidden",
   objectFit: "cover",
 });
+export const viewerButton = style({
+  position: "absolute",
+  zIndex: 3,
+  inset: 0,
+  padding: 0,
+  border: 0,
+  background: "transparent",
+  cursor: "pointer",
+  selectors: {
+    "&:focus-visible": {
+      outline: `2px solid ${essayAccent}`,
+      outlineOffset: -5,
+    },
+  },
+});
 export const copy = style({
   position: "relative",
   zIndex: 3,
@@ -225,6 +240,30 @@ export const description = style({
   margin: "22px 0 0",
   color: "rgba(245, 246, 240, 0.68)",
   lineHeight: vars.lineHeight.body,
+});
+
+export const categoryBadge = style({
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 8,
+  marginTop: 18,
+  padding: "9px 12px",
+  color: essayAccent,
+  border: `1px solid color-mix(in srgb, ${essayAccent} 36%, transparent)`,
+  borderRadius: 999,
+  background: "rgba(4,6,10,.42)",
+  fontSize: ".62rem",
+  fontWeight: vars.fontWeight.semibold,
+  letterSpacing: ".12em",
+  textTransform: "uppercase",
+  backdropFilter: "blur(12px)",
+  transition: "background 180ms ease, transform 180ms ease",
+  selectors: {
+    "&:hover, &:focus-visible": {
+      background: "rgba(255,255,255,.09)",
+      transform: "translateY(-2px)",
+    },
+  },
 });
 
 export const rule = style({

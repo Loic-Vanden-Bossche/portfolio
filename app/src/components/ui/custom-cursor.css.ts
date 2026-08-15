@@ -13,6 +13,8 @@ globalStyle(`${enabledDocument}, ${enabledDocument} *`, {
 
 export const root = style({
   display: "none",
+  opacity: 1,
+  transition: "opacity 120ms ease",
   "@media": {
     [breakpoints.fineMotion]: {
       position: "fixed",
@@ -22,6 +24,10 @@ export const root = style({
       pointerEvents: "none",
     },
   },
+});
+
+globalStyle(`${enabledDocument}[data-story-transitioning="true"] ${root}`, {
+  opacity: 0,
 });
 
 const cursor = style({

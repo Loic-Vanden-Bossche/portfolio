@@ -3,6 +3,217 @@
     "title": "Loic — Photography & Development Portfolio",
     "description": "A personal archive of photography, development and creative experiments by Loic."
   },
+  "PhotographyArchive": {
+    "storyLabel": "Story {current} / {total}",
+    "placeholderDisclosure": "Public-domain example / replace with personal work",
+    "source": "View source",
+    "viewer": {
+      "open": "Open {title} in the photo viewer",
+      "close": "Close photo viewer",
+      "technical": "Technical notes",
+      "camera": "Camera",
+      "lens": "Lens",
+      "focalLength": "Focal length",
+      "exposure": "Shutter",
+      "aperture": "Aperture",
+      "iso": "Sensitivity",
+      "capturedAt": "Captured",
+      "dimensions": "Dimensions",
+      "unavailable": "Camera settings are not available in this source file.",
+      "hint": "Escape to close"
+    },
+    "navigation": {
+      "stories": "Stories",
+      "eyebrow": "Photography archive",
+      "title": "Choose a way of seeing.",
+      "close": "Close stories",
+      "home": "Portfolio home",
+      "development": "Development",
+      "storyNavigation": "Story navigation",
+      "adjacentStories": "Previous and next stories",
+      "previous": "Previous story",
+      "next": "Next story"
+    },
+    "index": {
+      "eyebrow": "Stories / Ten collections",
+      "title": "Follow another thread.",
+      "introduction": "The main essay crosses places and subjects. These stories slow down and follow one visual instinct at a time."
+    },
+    "categories": {
+      "animals": {
+        "title": "Animals",
+        "short": "Instinct, stillness and lives moving beside ours.",
+        "introduction": "A study of attention across water, air and leaf — creatures that reveal themselves only when the photographer learns to wait.",
+        "metadataTitle": "Animals — Photography story by Loic",
+        "metadataDescription": "An editorial photography story about animal presence, instinct and quiet observation."
+      },
+      "birds": {
+        "title": "Birds",
+        "short": "Patience, flight and the geometry of a watchful eye.",
+        "introduction": "A single encounter can contain an entire landscape. Here, patience meets a gaze built for distance and departure.",
+        "metadataTitle": "Birds — Photography story by Loic",
+        "metadataDescription": "A quiet bird photography story shaped by patience, flight and close observation."
+      },
+      "architecture": {
+        "title": "Architecture",
+        "short": "Structures that measure, shelter and resonate.",
+        "introduction": "Cities speak through repetition: a clock face, a turning stair, a vaulted instrument, a platform drawn into the dark.",
+        "metadataTitle": "Architecture — Photography story by Loic",
+        "metadataDescription": "An architectural photography story exploring time, structure, geometry and civic space."
+      },
+      "street": {
+        "title": "Street",
+        "short": "Chance encounters along the city's moving lines.",
+        "introduction": "Above ground and below it, the street is less a place than a current — carrying bodies, machines and light toward the next frame.",
+        "metadataTitle": "Street — Photography story by Loic",
+        "metadataDescription": "A street photography story following transit, artificial light and the moving city."
+      },
+      "landscape": {
+        "title": "Landscape",
+        "short": "Distance, weather and the invitation of an open road.",
+        "introduction": "Land remembers light at a different scale. A road offers passage; a ridge holds the final fire of the day.",
+        "metadataTitle": "Landscape — Photography story by Loic",
+        "metadataDescription": "A landscape photography story moving from open roads to the last light on a mountain ridge."
+      },
+      "portraits": {
+        "title": "Portraits",
+        "short": "Presence, character and the space around a face.",
+        "introduction": "Portraiture is a negotiation between a person, a lens and a moment. These public-domain studies hold the place for personal work to come.",
+        "metadataTitle": "Portraits — Photography story by Loic",
+        "metadataDescription": "A portrait photography study using clearly identified public-domain examples pending personal work."
+      },
+      "nature-macro": {
+        "title": "Nature & Macro",
+        "short": "Small worlds where colour becomes landscape.",
+        "introduction": "Move close enough and scale dissolves. A wing becomes architecture; a flower becomes weather; stillness becomes an event.",
+        "metadataTitle": "Nature & Macro — Photography story by Loic",
+        "metadataDescription": "A nature and macro photography story about colour, nearness and delicate forms."
+      },
+      "abstract-details": {
+        "title": "Abstract & Details",
+        "short": "Shape, rhythm and familiar things made strange.",
+        "introduction": "The recognizable world bends into circles, currents and measured marks — details freed from their original purpose.",
+        "metadataTitle": "Abstract & Details — Photography story by Loic",
+        "metadataDescription": "An abstract photography story discovering rhythm, geometry and unfamiliar forms in ordinary subjects."
+      },
+      "culture-events": {
+        "title": "Culture & Events",
+        "short": "Gathering places, ritual and rooms that remember sound.",
+        "introduction": "Culture leaves traces in instruments, interiors and shared silence. Even an empty room can feel charged with an audience.",
+        "metadataTitle": "Culture & Events — Photography story by Loic",
+        "metadataDescription": "An editorial photography story about cultural spaces, resonance and collective memory."
+      },
+      "still-life": {
+        "title": "Still Life",
+        "short": "Objects arranged until their silence begins to speak.",
+        "introduction": "Fruit, flowers, books and tools become small theatres of weight and balance. These public-domain examples mark space for a personal series.",
+        "metadataTitle": "Still Life — Photography story by Loic",
+        "metadataDescription": "A still-life photography study using clearly identified public-domain examples pending personal work."
+      }
+    },
+    "images": {
+      "road": {
+        "title": "The First Line",
+        "narrative": "The road does not simply cross the valley; it gives the eye a direction. Distance becomes an invitation before the journey has properly begun.",
+        "alt": "A bright road curving through green mountain fields under a clear sky"
+      },
+      "butterfly": {
+        "title": "Small Gravity",
+        "narrative": "A pale wing holds against impossible colour. The photograph rewards nearness, but also restraint: one more step would break the spell.",
+        "alt": "A white butterfly resting on vivid magenta flowers"
+      },
+      "heron": {
+        "title": "The Patient Witness",
+        "narrative": "Stillness is not absence. In the heron's eye, waiting becomes concentrated movement — a whole body listening for the instant to leave.",
+        "alt": "Close profile of a heron with a vivid yellow eye and long beak"
+      },
+      "ridge": {
+        "title": "A Ridge Remembers Fire",
+        "narrative": "For a few minutes, stone carries the colour of flame. Below it, snow and shadow already belong to the approaching night.",
+        "alt": "Snow-covered mountain ridges glowing orange in the final sunlight"
+      },
+      "clocks": {
+        "title": "Blue Hour Keeps Time",
+        "narrative": "Three faces measure the same evening differently. Around them, the city changes shift from daylight into illuminated order.",
+        "alt": "Historic clock towers framed by buildings beneath a deep blue evening sky"
+      },
+      "metro": {
+        "title": "The City Climbs",
+        "narrative": "Steel and stone share the last gold of the day. The train appears briefly above the street, then carries its anonymous story elsewhere.",
+        "alt": "A metro train crossing an elevated Paris bridge in golden light"
+      },
+      "spiral": {
+        "title": "Down to the Centre",
+        "narrative": "Function disappears from this height. The staircase becomes orbit, repetition becomes pull, and the floor waits like a distant fixed point.",
+        "alt": "A spiral staircase seen from above circling toward a patterned centre"
+      },
+      "organ": {
+        "title": "Cathedral of Breath",
+        "narrative": "Metal columns wait beneath the vault. Their silence has weight because the room already seems to remember every note.",
+        "alt": "An ornate pipe organ illuminated within a vaulted stone interior"
+      },
+      "underground": {
+        "title": "Night Line",
+        "narrative": "Below the city, colour replaces weather. Orange, violet and steel turn an ordinary platform into a stage between arrivals.",
+        "alt": "A curved underground station with an orange train and luminous platform lights"
+      },
+      "jellyfish": {
+        "title": "Electric Afterlife",
+        "narrative": "Body becomes current and edge becomes light. It moves without horizon, carrying its own atmosphere into the dark.",
+        "alt": "A luminous blue and amber jellyfish floating in deep darkness"
+      },
+      "frieda-claus": {
+        "title": "A Quiet Interior",
+        "narrative": "A composed gaze and softly modelled light make restraint the subject. The portrait holds its era without surrendering the person inside it.",
+        "alt": "Historic monochrome portrait of Frieda Gertrud Claus seated in profile"
+      },
+      "jessica-meir": {
+        "title": "Built for Elsewhere",
+        "narrative": "Person and equipment occupy the frame as equals. The suit is both setting and symbol, turning a formal portrait into a threshold.",
+        "alt": "Black-and-white official portrait of astronaut Jessica Meir wearing a space suit"
+      },
+      "ida-harper": {
+        "title": "The Direct Gaze",
+        "narrative": "Formal pose gives way to direct attention. Small choices in posture and expression resist the distance imposed by the archive.",
+        "alt": "Historic studio portrait of writer and activist Ida Husted Harper"
+      },
+      "nathan-mossell": {
+        "title": "A Life in Bearing",
+        "narrative": "Clothing, posture and expression form a deliberate record. The image preserves achievement through the simple force of presence.",
+        "alt": "Historic formal portrait of physician Nathan Francis Mossell"
+      },
+      "photographer-studio": {
+        "title": "Portrait of a Practice",
+        "narrative": "The camera turns back toward its own world. People, tools and painted scenery reveal portraiture as both encounter and construction.",
+        "alt": "A nineteenth-century photographer and group posed inside a working studio"
+      },
+      "fruit-study": {
+        "title": "Weight and Ripeness",
+        "narrative": "Fruit gathers light along curved surfaces. The arrangement feels abundant, yet every object is held in careful visual balance.",
+        "alt": "Historic still-life photograph of fruit arranged on a tabletop"
+      },
+      "vase-flowers": {
+        "title": "The Held Bloom",
+        "narrative": "A vessel gives temporary order to growth. Petals press outward while the composition holds them inside a measured silence.",
+        "alt": "Historic still life of flowers arranged in a vase"
+      },
+      "books": {
+        "title": "Pages at Rest",
+        "narrative": "Closed books keep their contents invisible, leaving texture, edges and accumulated weight to tell the story instead.",
+        "alt": "A still-life arrangement of stacked and open books"
+      },
+      "barber-tools": {
+        "title": "Tools Between Gestures",
+        "narrative": "Objects shaped by repeated use wait in suspension. Their arrangement maps an absent hand and the ritual it performs.",
+        "alt": "Barbershop tools carefully arranged for a still-life photograph"
+      },
+      "ceramics": {
+        "title": "A Quiet Vessel",
+        "narrative": "A porcelain bowl makes volume from emptiness. Its rim, glaze and gentle asymmetry turn a useful object into a study of held light.",
+        "alt": "A porcelain bowl isolated in a restrained still-life composition"
+      }
+    }
+  },
   "Portfolio": {
     "navigation": {
       "homeLabel": "Portfolio home",
